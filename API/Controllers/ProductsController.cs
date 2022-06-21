@@ -1,5 +1,8 @@
 ﻿using API.Data;
+using API.Entities;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace API.Controllers
 {
@@ -14,16 +17,27 @@ namespace API.Controllers
             _context = context;
         }
 
+        /// <summary>
+        /// Asynchronous method to get list of products
+        /// </summary>
+        /// <returns>Return list of products from a database</returns>
         [HttpGet]
-        public string GetProducts()
+        public async Task<ActionResult<List<Product>>> GetProducts()
         {
-            return "this will be a list of products";
+            var products = await _context.Products.ToListAsync();
+
+            return Ok(products);
         }
 
+        /// <summary>
+        /// Asynchronous method to get selected product by id
+        /// </summary>
+        /// <param name="id">Product ID</param>
+        /// <returns>Return selected product from a database</returns>
         [HttpGet("{id}")]
-        public string GetProduct(int id)
+        public async Task<ActionResult<Product>> GetProduct(int id)
         {
-            return "single product";
+            return await _context.Products.FindAsync(id);
         }
 
     }
