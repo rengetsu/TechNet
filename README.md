@@ -1,5 +1,7 @@
 # TechNet
-TechNet - API and e-commerce store using Angular, .NET Core and Stripe for payment processing.
+TechNet - online store system template for selling computer parts with payments and sample database.
+Project includes API and e-commerce store created using Angular, .NET Core and Stripe for payment processing.
+This is an open source project created for educational purposes, feel free to use it as a template for an online store.
 
 ## Used NuGet packages
 * **Microsoft.EntityFrameworkCore.Sqlite** (6.0.6)
