@@ -1,4 +1,4 @@
-﻿namespace API.Entities
+﻿namespace Core.Entities
 {
     /// <summary>
     /// Unit of goods that we sell in the online store
